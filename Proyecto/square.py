@@ -3,10 +3,10 @@
      #color es el color del cuadrado
     import turtle
     turtle.up()
-    turtle.goto(x, y)
+    turtle.goto(x, y)  #posicion del cuadrado
     turtle.down()
-    turtle.color(color)
-    turtle.begin_fill()
+    turtle.color(color) #color del cuadradi
+    turtle.begin_fill() #rellena el cuadrado del color determinado
 
     for count in range(4):
         turtle.forward(size)

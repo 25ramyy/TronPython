@@ -1,11 +1,11 @@
- import collections
+import collections
 import math
 
 class vector(collections.Sequence):
     PRECISION = 6
-    _slots_ = ('_x', '_y', '_hash')
+    __slots__ = ('_x', '_y', '_hash')
 
-    def _init_(self, x, y):
+    def __init__(self, x, y):
         self._hash = None
         self._x = round(x, self.PRECISION)
         self._y = round(y, self.PRECISION)
@@ -18,7 +18,7 @@ class vector(collections.Sequence):
     @x.setter #set x
     def x(self, value):
         if self._hash is not None:
-            raise ValueError('cannot set x after hashing')
+            raise ValueError('no puede settear x')
         self._x = round(value, self.PRECISION)
 
     @property #get y
@@ -28,22 +28,22 @@ class vector(collections.Sequence):
     @y.setter #set y
     def y(self, value):
         if self._hash is not None:
-            raise ValueError('cannot set y after hashing')
+            raise ValueError('no puede settear y')
         self._y = round(value, self.PRECISION)
 
 
-    def _hash_(self):
+    def __hash__(self):
         #val (x,y)
         if self._hash is None:
             pair = (self.x, self.y)
             self._hash = hash(pair)
         return self._hash
 
-    def _len_(self):
+    def __len__(self):
         #longitud vec (x,y)=2
         return 2
 
-    def _getitem_(self, index):
+    def __getitem__(self, index):
         #get1= x ; get2=y
         if index == 0:
             return self.x
@@ -55,3 +55,8 @@ class vector(collections.Sequence):
         #copia el vector
         type_self = type(self)
         return type_self(self.x, self.y)
+
+    def __eq__(self, other): #collision
+        if isinstance(other, vector):
+            return self.x == other.x and self.y == other.y
+        return NotImplemented

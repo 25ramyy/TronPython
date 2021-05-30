@@ -60,3 +60,52 @@ class vector(collections.Sequence):
         if isinstance(other, vector):
             return self.x == other.x and self.y == other.y
         return NotImplemented
+    def _iadd_(self, other):
+        #suma al parametro x o y un valor ( mueve el vector)
+        if self._hash is not None:
+            raise ValueError('no se puede mover el vector')
+        if isinstance(other, vector):
+            self.x += other.x
+            self.y += other.y
+        else:
+            self.x += other
+            self.y += other
+        return self
+
+    def move(self, other):
+        #mueve el vector
+        self._iadd_(other)
+
+    def desAcelerattion(self): #desaceleracion XY
+        if(self.x>1 and self.x<5):
+            self.x-=1
+        if(self.x<-1 and self.x>-5):
+            self.x+=1
+        if(self.y>1 and self.y<5):
+            self.y-=1
+        if(self.y<-1 and self.y>-5):
+            self.y+=1
+
+    def Acelerattion(self): #aceleración XY
+        if(self.x>=1 and self.x<4):
+            self.x+=1
+        if(self.x<=-1 and self.x>-4):
+            self.x-=1
+        if(self.y>=1 and self.y<4):
+            self.y+=1
+        if(self.y<=-1 and self.y>-4):
+            self.y-=1
+        
+    def rotate(self, angle):
+        #rota el vector tantos grados
+        if self._hash is not None:
+            raise ValueError('no se puede rotar el vector')
+        radians = angle * math.pi / 180.0
+        cosine = math.cos(radians)
+        sine = math.sin(radians)
+        x = self.x
+        y = self.y
+        self.x = x * cosine - y * sine
+        self.y = y * cosine + x * sine
+        print(self.x)
+        print(self.y)

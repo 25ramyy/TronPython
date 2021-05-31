@@ -35,7 +35,7 @@ def draw():
 
     p2xy.move(p2aim)
     p2head = p2xy.copy()
-
+#condiciones de derrota y victoria
     if ((p1head in p2body) and (p2head in p1body)):
         print('EMPATE!')
         return

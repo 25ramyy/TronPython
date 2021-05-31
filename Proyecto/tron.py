@@ -27,3 +27,25 @@ hideturtle()
 
 draw()
 done()
+
+
+#333 
+
+setup(420, 420, 420, 0) #tamaño pantalla
+hideturtle()
+tracer(False)
+listen()
+
+onkey(lambda: p1aim.rotate(90), 'a')
+onkey(lambda: p1aim.rotate(-90), 'd')
+onkey(lambda: p2aim.rotate(90), 'j')
+onkey(lambda: p2aim.rotate(-90), 'k')
+
+
+onkey(lambda: p1aim.desAcelerattion(), 's')
+onkey(lambda: p1aim.Acelerattion(), 'w')
+onkey(lambda: p2aim.desAcelerattion(), 'm')
+onkey(lambda: p2aim.Acelerattion(), 'i')
+
+draw()
+done()

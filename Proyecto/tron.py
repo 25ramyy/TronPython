@@ -15,21 +15,6 @@ def inside(head):
     return -200 < head.x < 200 and -200 < head.y < 200
 
 def draw():
-
-    square(p1xy.x, p1xy.y, 3, 'red')
-    square(p2xy.x, p2xy.y, 3, 'blue')
-    update()
-    ontimer(draw, 50)
-
-setup(420, 420, 420, 0) #tamaño pantalla
-hideturtle()
-
-
-draw()
-done()
-
-
-def draw():
     p1xy.move(p1aim)
     p1head = p1xy.copy()
 

@@ -11,7 +11,7 @@ p2aim = vector(-4, 0)
 p2body = set()
 
 def inside(head):
-    "Return True si esta adentro de screen."
+    "Return True si esta adentro de screen o pantalla."
     return -200 < head.x < 200 and -200 < head.y < 200
 
 def draw():

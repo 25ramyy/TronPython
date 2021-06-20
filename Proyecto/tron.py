@@ -1,6 +1,7 @@
 from turtle import *
 from square import square
 from vector import vector
+import random
 
 p1xy = vector(-100, 0) #pos inicial
 p1aim = vector(4, 0) #velocidad

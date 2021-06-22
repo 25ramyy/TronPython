@@ -11,6 +11,9 @@ p2xy = vector(100, 0)
 p2aim = vector(-4, 0)
 p2body = set()
 
+lugarObjetox=random.randint(-100, 100)
+lugarObjetoy=random.randint(-100, 100)
+
 def inside(head):
     "Return True si esta adentro de screen o pantalla."
     return -200 < head.x < 200 and -200 < head.y < 200

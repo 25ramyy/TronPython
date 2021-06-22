@@ -50,6 +50,9 @@ def draw():
         print('Jugador rojo gana')
         return
 
+ if ((lugarObjetox-5 <= p1head.x <= lugarObjetox+5)and(lugarObjetoy-5 <= p1head.y <= lugarObjetoy+5)):
+        p1aim.rotate(-90)
+
     p1body.add(p1head)
     p2body.add(p2head)
 

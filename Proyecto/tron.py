@@ -59,6 +59,7 @@ def draw():
     p1body.add(p1head)
     p2body.add(p2head)
 
+    square(lugarObjetox,lugarObjetoy,5,'green')
     square(p1xy.x, p1xy.y, 3, 'red')
     square(p2xy.x, p2xy.y, 3, 'blue')
     update()
